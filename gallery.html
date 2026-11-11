@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <h1>My Image Gallery</h1>
+        <p>Explore beautiful places, people and buildings.</p>
+    </header>
+
+    <main class="container">
+        <!-- These radio buttons make the filters work using CSS only. -->
+        <input type="radio" name="filter" id="all" checked>
+        <input type="radio" name="filter" id="landscapes">
+        <input type="radio" name="filter" id="portraits">
+        <input type="radio" name="filter" id="architecture">
+
+        <div class="filters">
+            <label for="all">All</label>
+            <label for="landscapes">Landscapes</label>
+            <label for="portraits">Portraits</label>
+            <label for="architecture">Architecture</label>
+        </div>
+
+        <section class="gallery">
+            <!-- Landscapes -->
+            <article class="card landscapes">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Green mountain landscape">
+                <div class="card-info">
+                    <span class="category">Landscapes</span>
+                    <h2>Mountain Views</h2>
+                    <div class="overlay"><p>A peaceful view of mountains and nature.</p></div>
+                </div>
+            </article>
+
+            <article class="card landscapes">
+                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80" alt="Lake surrounded by mountains">
+                <div class="card-info">
+                    <span class="category">Landscapes</span>
+                    <h2>Quiet Lake</h2>
+                    <div class="overlay"><p>A calm lake surrounded by beautiful scenery.</p></div>
+                </div>
+            </article>
+
+            <article class="card landscapes">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Mountain lake at sunset">
+                <div class="card-info">
+                    <span class="category">Landscapes</span>
+                    <h2>Nature Escape</h2>
+                    <div class="overlay"><p>A lovely place to relax and enjoy nature.</p></div>
+                </div>
+            </article>
+
+            <article class="card landscapes">
+                <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80" alt="Deer in a green forest">
+                <div class="card-info">
+                    <span class="category">Landscapes</span>
+                    <h2>Forest Life</h2>
+                    <div class="overlay"><p>Wildlife enjoying its natural home.</p></div>
+                </div>
+            </article>
+
+            <!-- Portraits -->
+            <article class="card portraits">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Portrait of a woman">
+                <div class="card-info">
+                    <span class="category">Portraits</span>
+                    <h2>Natural Beauty</h2>
+                    <div class="overlay"><p>A simple portrait showing natural expression.</p></div>
+                </div>
+            </article>
+
+            <article class="card portraits">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Portrait of a man">
+                <div class="card-info">
+                    <span class="category">Portraits</span>
+                    <h2>Confident Look</h2>
+                    <div class="overlay"><p>A portrait with a relaxed and confident style.</p></div>
+                </div>
+            </article>
+
+            <article class="card portraits">
+                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=800&q=80" alt="Portrait of a woman outdoors">
+                <div class="card-info">
+                    <span class="category">Portraits</span>
+                    <h2>Outdoor Portrait</h2>
+                    <div class="overlay"><p>A portrait taken in natural light.</p></div>
+                </div>
+            </article>
+
+            <article class="card portraits">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" alt="Portrait of a smiling man">
+                <div class="card-info">
+                    <span class="category">Portraits</span>
+                    <h2>Friendly Smile</h2>
+                    <div class="overlay"><p>A friendly smile captured in a photograph.</p></div>
+                </div>
+            </article>
+
+            <!-- Architecture -->
+            <article class="card architecture">
+                <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=800&q=80" alt="Modern white building">
+                <div class="card-info">
+                    <span class="category">Architecture</span>
+                    <h2>Modern Design</h2>
+                    <div class="overlay"><p>A building with a clean and modern design.</p></div>
+                </div>
+            </article>
+
+            <article class="card architecture">
+                <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=800&q=80" alt="Modern building exterior">
+                <div class="card-info">
+                    <span class="category">Architecture</span>
+                    <h2>City Structure</h2>
+                    <div class="overlay"><p>An interesting structure in the city.</p></div>
+                </div>
+            </article>
+
+            <article class="card architecture">
+                <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=800&q=80" alt="Geometric building design">
+                <div class="card-info">
+                    <span class="category">Architecture</span>
+                    <h2>Geometric Shapes</h2>
+                    <div class="overlay"><p>Simple shapes create an eye-catching building.</p></div>
+                </div>
+            </article>
+
+            <article class="card architecture">
+                <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80" alt="Tall city building">
+                <div class="card-info">
+                    <span class="category">Architecture</span>
+                    <h2>City Buildings</h2>
+                    <div class="overlay"><p>Tall buildings form part of the city skyline.</p></div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>My Image Gallery | HTML and CSS Exercise</p>
+    </footer>
+
+</body>
+</html>

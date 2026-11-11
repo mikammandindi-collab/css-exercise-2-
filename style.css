@@ -1,0 +1,206 @@
+/* Basic page styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    line-height: 1.5;
+}
+
+.page-header {
+    text-align: center;
+    background-color: #243b55;
+    color: white;
+    padding: 35px 15px;
+}
+
+.page-header h1 {
+    margin-bottom: 8px;
+    font-size: 32px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* Hide the radio buttons but keep them working */
+input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+/* Flexbox is used to arrange the filter buttons */
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.filters label {
+    background-color: white;
+    color: #243b55;
+    border: 1px solid #243b55;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.filters label:hover {
+    background-color: #dce6f0;
+    transform: translateY(-2px);
+}
+
+/* Show which filter is active */
+#all:checked ~ .filters label[for="all"],
+#landscapes:checked ~ .filters label[for="landscapes"],
+#portraits:checked ~ .filters label[for="portraits"],
+#architecture:checked ~ .filters label[for="architecture"] {
+    background-color: #243b55;
+    color: white;
+}
+
+/* Main gallery uses CSS Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Each image card also uses Grid */
+.card {
+    display: grid;
+    grid-template-rows: 210px auto;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.card-info {
+    position: relative;
+    padding: 15px;
+    min-height: 105px;
+}
+
+.category {
+    display: inline-block;
+    background-color: #e4edf6;
+    color: #243b55;
+    padding: 3px 9px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.card h2 {
+    font-size: 18px;
+}
+
+/* Description overlay appears when the user hovers over a card */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(36, 59, 85, 0.92);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 18px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+/* CSS filters */
+.card {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#landscapes:checked ~ .gallery .card:not(.landscapes),
+#portraits:checked ~ .gallery .card:not(.portraits),
+#architecture:checked ~ .gallery .card:not(.architecture) {
+    display: none;
+}
+
+/* Smooth appearance for cards when a filter is selected */
+#landscapes:checked ~ .gallery .card.landscapes,
+#portraits:checked ~ .gallery .card.portraits,
+#architecture:checked ~ .gallery .card.architecture,
+#all:checked ~ .gallery .card {
+    animation: showCard 0.35s ease;
+}
+
+@keyframes showCard {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 550px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+    .filters {
+        gap: 8px;
+    }
+
+    .filters label {
+        padding: 8px 13px;
+        font-size: 14px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #243b55;
+    color: white;
+    margin-top: 35px;
+}
